@@ -1,0 +1,220 @@
+<!DOCTYPE html><html lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery flexImages Plugin</title>
+    <meta name="description" content="A lightweight jQuery plugin for creating fluid galleries as seen on Flickr and Google Images.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <style>
+        body { margin: 0; padding: 0; border: 0; min-width: 320px; color: #777; }
+        html, button, input, select, textarea, .pure-g [class *= "pure-u"] { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1.02em; }
+        p, td { line-height: 1.5; }
+        ul { padding: 0 0 0 20px; }
+
+        th { background: #eee; white-space: nowrap; }
+        th, td { padding: 10px; text-align: left; vertical-align: top; font-size: .9em; font-weight: normal; border-right: 1px solid #fff; }
+        td:first-child { white-space: nowrap; color: #008000; width: 1%; font-style: italic; }
+
+        h1, h2, h3 { color: #4b4b4b; font-family: "Source Sans Pro", sans-serif; font-weight: 300; margin: 0 0 1.2em; }
+        h1 { font-size: 4.5em; color: #1f8dd6; margin: 0 0 .4em; }
+        h2 { font-size: 2em; color: #636363; }
+        h3 { font-size: 1.8em; color: #4b4b4b; margin: 1.8em 0 .8em }
+        h4 { font: bold 1em sans-serif; color: #636363; margin: 4em 0 1em; }
+        a { color: #4e99c7; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        p, pre { margin: 0 0 1.2em; }
+        ::selection { color: #fff; background: #328efd; }
+        ::-moz-selection { color: #fff; background: #328efd; }
+
+        @media (max-width:480px) {
+            h1 { font-size: 3em; }
+            h2 { font-size: 1.8em; }
+            h3 { font-size: 1.5em; }
+            td:first-child { white-space: normal; }
+        }
+
+        .inline-code { padding: 1px 5px; background: #eee; border-radius: 2px; }
+        pre { padding: 15px 10px; font-size: .9em; color: #555; background: #edf3f8; }
+        pre i { color: #aaa; } /* comments */
+        pre b { font-weight: normal; color: #cf4b25; } /* strings */
+        pre em { color: #0c59e9; } /* numeric */
+
+        /* Pure CSS */
+        .pure-button { margin: 5px 0; text-decoration: none !important; }
+        .button-lg { margin: 5px 0; padding: .65em 1.6em; font-size: 105%; }
+    </style>
+    <link rel="stylesheet" href="jquery.flex-images.css">
+</head>
+<body>
+    <div style="max-width:900px;padding:0 10px;margin:40px auto;text-align:center">
+        <h1>flexImages</h1>
+        <h2>A lightweight jQuery plugin for creating fluid galleries as seen on Flickr and Google Images.</h2>
+        <a style="margin:5px 0" href="https://github.com/Pixabay/jQuery-flexImages/archive/master.zip" class="pure-button pure-button-primary button-lg">Download</a>
+        &nbsp;
+        <a style="margin:5px 0" href="https://github.com/Pixabay/jQuery-flexImages" class="pure-button button-lg">View on GitHub</a>
+    </div>
+
+    <div style="max-width:900px;margin:auto;padding:0 10px">
+        <h3>Overview and Features</h3>
+        <p>
+            Released under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>.
+            Source on <a href="https://github.com/Pixabay/jQuery-flexImages">Github</a> (<a href="https://github.com/Pixabay/jQuery-flexImages#changelog">changelog</a>).
+            Compatible with jQuery 1.7.0+ in Firefox, Safari, Chrome, Opera, Internet Explorer 7+. No dependencies except the jQuery library.
+        </p>
+        <ul>
+            <li>Ridiculously tiny: 1.2 kB of JavaScript - less than 0.6 kB gzipped</li>
+            <li>Source images can have any size</li>
+            <li>Works on more than just images, e.g. videos or plain text</li>
+        </ul>
+        <p>
+            This plugin was developed by and for <a href="http://pixabay.com/">Pixabay.com</a> - an international repository for sharing free public domain images.
+            We have <a href="http://pixabay.com/en/photos/?order=best">implemented this plugin in production</a> and we share this piece of software - in the spirit of Pixabay - freely with others.
+        </p>
+
+        <h3>Live Demo</h3>
+    </div>
+
+    <div style="max-width:908px;margin:auto;padding:0 10px 10px">
+        <div id="demo1" class="flex-images">
+            <div class="item" data-w="200" data-h="150"><img src="http://lorempixel.com/200/150/?1"></div>
+            <div class="item" data-w="250" data-h="150"><img src="http://lorempixel.com/250/150/?2"></div>
+            <div class="item" data-w="150" data-h="150"><img src="http://lorempixel.com/150/150/?3"></div>
+            <div class="item" data-w="150" data-h="150"><img src="http://lorempixel.com/150/150/?4"></div>
+            <div class="item" data-w="200" data-h="150"><img src="http://lorempixel.com/200/150/?5"></div>
+            <div class="item" data-w="100" data-h="150"><img src="http://lorempixel.com/100/150/?6"></div>
+            <div class="item" data-w="180" data-h="150"><img src="http://lorempixel.com/180/150/?7"></div>
+            <div class="item" data-w="185" data-h="150"><img src="http://lorempixel.com/185/150/?8"></div>
+            <div class="item" data-w="350" data-h="150"><img src="http://lorempixel.com/350/150/?9"></div>
+            <div class="item" data-w="200" data-h="150"><img src="http://lorempixel.com/200/150/?10"></div>
+            <div class="item" data-w="165" data-h="150"><img src="http://lorempixel.com/165/150/?11"></div>
+            <div class="item" data-w="150" data-h="150"><img src="http://lorempixel.com/150/150/?12"></div>
+            <div class="item" data-w="120" data-h="150"><img src="http://lorempixel.com/120/150/?13"></div>
+            <div class="item" data-w="120" data-h="150"><img src="http://lorempixel.com/120/150/?14"></div>
+            <div class="item" data-w="140" data-h="150"><img src="http://lorempixel.com/140/150/?15"></div>
+            <div class="item" data-w="200" data-h="150"><img src="http://lorempixel.com/200/150/?16"></div>
+            <div class="item" data-w="170" data-h="150"><img src="http://lorempixel.com/170/150/?17"></div>
+        </div>
+    </div>
+
+    <div style="max-width:900px;margin:auto;padding:0 10px 50px">
+        <h3>Usage</h3>
+        <p>
+            Include the stylesheet <span class="inline-code">jquery.flex-images.css</span> in the <span class="inline-code">&lt;head&gt;</span> section of your HTML document - and the JavsScript file <span class="inline-code">jquery.flex-images.min.js</span> after loading jQuery.
+            flexImages accepts settings from an object of key/value pairs.
+        </p>
+        <pre>
+$(selector).flexImages({key1: value1, key2: value2});
+</pre>
+        <p>
+            To <b>update</b> any settings or to <b>reload</b> modified content, simply re-initialize flexImages again on the appropriate container.
+            The plugin automatically prevents multiple bindings to one and the same element.
+            This may be used for content that gets modified later on via AJAX.
+        </p>
+
+        <h3>Settings</h3>
+        <table>
+            <tr><th>Property</th><th>Default</th><th>Description</th></tr>
+            <tr><td>container</td><td>'.item'</td><td>Selector of the individual image/object containers.</td></tr>
+            <tr><td>object</td><td>'img'</td><td>Selector of the image/object inside a container.</td></tr>
+            <tr><td>rowHeight</td><td>180</td><td>Maximum height of a row.</td></tr>
+            <tr><td>maxRows</td><td><i>null</i></td><td>Maximum number of rows to display. Images/Objects exceeding this row are hidden.</td></tr>
+            <tr><td>truncate</td><td><i>false</i></td><td>Hide <i>incomplete</i> last row of images/objects.</td></tr>
+        </table>
+
+        <h3 style="margin-top:.8em;border-top:1px solid #eee;padding-top:1.8em">Example Code</h3>
+        <p><b>HTML Markup for the on page live demo</b></p>
+
+        <pre>
+&lt;div class=<b>&quot;flex-images&quot;</b>&gt;
+    &lt;div class=<b>&quot;item&quot;</b> data-w=<b>&quot;200&quot;</b> data-h=<b>&quot;150&quot;</b>&gt;&lt;img src=<b>&quot;http://lorempixel.com/200/150/?1&quot;</b>&gt;&lt;/div&gt;
+    &lt;div class=<b>&quot;item&quot;</b> data-w=<b>&quot;250&quot;</b> data-h=<b>&quot;150&quot;</b>&gt;&lt;img src=<b>&quot;http://lorempixel.com/250/150/?2&quot;</b>&gt;&lt;/div&gt;
+    &lt;div class=<b>&quot;item&quot;</b> data-w=<b>&quot;150&quot;</b> data-h=<b>&quot;150&quot;</b>&gt;&lt;img src=<b>&quot;http://lorempixel.com/150/150/?3&quot;</b>&gt;&lt;/div&gt;
+    &lt;div class=<b>&quot;item&quot;</b> data-w=<b>&quot;150&quot;</b> data-h=<b>&quot;150&quot;</b>&gt;&lt;img src=<b>&quot;http://lorempixel.com/150/150/?4&quot;</b>&gt;&lt;/div&gt;
+    &lt;div class=<b>&quot;item&quot;</b> data-w=<b>&quot;200&quot;</b> data-h=<b>&quot;150&quot;</b>&gt;&lt;img src=<b>&quot;http://lorempixel.com/200/150/?5&quot;</b>&gt;&lt;/div&gt;
+    &lt;div class=<b>&quot;item&quot;</b> data-w=<b>&quot;100&quot;</b> data-h=<b>&quot;150&quot;</b>&gt;&lt;img src=<b>&quot;http://lorempixel.com/100/150/?6&quot;</b>&gt;&lt;/div&gt;
+    &lt;div class=<b>&quot;item&quot;</b> data-w=<b>&quot;180&quot;</b> data-h=<b>&quot;150&quot;</b>&gt;&lt;img src=<b>&quot;http://lorempixel.com/180/150/?7&quot;</b>&gt;&lt;/div&gt;
+    &lt;div class=<b>&quot;item&quot;</b> data-w=<b>&quot;185&quot;</b> data-h=<b>&quot;150&quot;</b>&gt;&lt;img src=<b>&quot;http://lorempixel.com/185/150/?8&quot;</b>&gt;&lt;/div&gt;
+    &lt;div class=<b>&quot;item&quot;</b> data-w=<b>&quot;350&quot;</b> data-h=<b>&quot;150&quot;</b>&gt;&lt;img src=<b>&quot;http://lorempixel.com/350/150/?9&quot;</b>&gt;&lt;/div&gt;
+    &lt;div class=<b>&quot;item&quot;</b> data-w=<b>&quot;200&quot;</b> data-h=<b>&quot;150&quot;</b>&gt;&lt;img src=<b>&quot;http://lorempixel.com/200/150/?10&quot;</b>&gt;&lt;/div&gt;
+    &lt;div class=<b>&quot;item&quot;</b> data-w=<b>&quot;165&quot;</b> data-h=<b>&quot;150&quot;</b>&gt;&lt;img src=<b>&quot;http://lorempixel.com/165/150/?11&quot;</b>&gt;&lt;/div&gt;
+    &lt;div class=<b>&quot;item&quot;</b> data-w=<b>&quot;150&quot;</b> data-h=<b>&quot;150&quot;</b>&gt;&lt;img src=<b>&quot;http://lorempixel.com/150/150/?12&quot;</b>&gt;&lt;/div&gt;
+    &lt;div class=<b>&quot;item&quot;</b> data-w=<b>&quot;120&quot;</b> data-h=<b>&quot;150&quot;</b>&gt;&lt;img src=<b>&quot;http://lorempixel.com/120/150/?13&quot;</b>&gt;&lt;/div&gt;
+    &lt;div class=<b>&quot;item&quot;</b> data-w=<b>&quot;120&quot;</b> data-h=<b>&quot;150&quot;</b>&gt;&lt;img src=<b>&quot;http://lorempixel.com/120/150/?14&quot;</b>&gt;&lt;/div&gt;
+    &lt;div class=<b>&quot;item&quot;</b> data-w=<b>&quot;140&quot;</b> data-h=<b>&quot;150&quot;</b>&gt;&lt;img src=<b>&quot;http://lorempixel.com/140/150/?15&quot;</b>&gt;&lt;/div&gt;
+    &lt;div class=<b>&quot;item&quot;</b> data-w=<b>&quot;200&quot;</b> data-h=<b>&quot;150&quot;</b>&gt;&lt;img src=<b>&quot;http://lorempixel.com/200/150/?16&quot;</b>&gt;&lt;/div&gt;
+    &lt;div class=<b>&quot;item&quot;</b> data-w=<b>&quot;170&quot;</b> data-h=<b>&quot;150&quot;</b>&gt;&lt;img src=<b>&quot;http://lorempixel.com/170/150/?17&quot;</b>&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+
+        <p>
+            Each image must be wrapped inside a container element. The container must have a width (data-w) and height (data-h) attribute set that corresponds to the image's/object's original dimension.
+        </p>
+        <p><b>JavaScript code</b></p>
+
+        <pre>
+$(<b>'.flex-images'</b>).flexImages({rowHeight: <em>140</em>});</pre>
+
+        <p>
+            How it works: The plugin dynamically changes the width and height of all containers.
+            The images themselves have their height and width set to 100%.
+            Thus, each image takes up the full space inside its container.
+        </p>
+        <p>
+            This architecture enables a very flexible grid layout that works with more than just images.
+            E.g. objects may be placed on top of the images via absolute positioning. Or instead of images, the containers may be filled with videos or even plain text.
+        </p>
+
+        <h3>More Examples</h3>
+        <p>Please take a look at the source code of this page to see how these demos work.</p>
+
+        <p>1. Fixed number of two complete rows with lazy loading of images; only images that are actually visible are retrieved from the server:</p>
+        <div id="demo2" class="flex-images">
+            <div class="item" data-w="200" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/200/150/?31"></div>
+            <div class="item" data-w="250" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/250/150/?32"></div>
+            <div class="item" data-w="150" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/150/150/?33"></div>
+            <div class="item" data-w="150" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/150/150/?34"></div>
+            <div class="item" data-w="200" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/200/150/?35"></div>
+            <div class="item" data-w="100" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/100/150/?36"></div>
+            <div class="item" data-w="180" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/180/150/?37"></div>
+            <div class="item" data-w="185" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/185/150/?38"></div>
+            <div class="item" data-w="350" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/350/150/?39"></div>
+            <div class="item" data-w="200" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/200/150/?40"></div>
+            <div class="item" data-w="165" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/165/150/?41"></div>
+        </div>
+
+        <p style="margin-top:60px">2. A fluid grid with video content and only full rows:</p>
+        <div id="demo3" class="flex-images">
+            <div class="item" data-w="280" data-h="157">
+                <iframe style="width:100%;height:100%" src="http://www.youtube.com/embed/JGCsyshUU-A" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="item" data-w="280" data-h="157">
+                <iframe style="width:100%;height:100%" src="http://www.youtube.com/embed/QeR47AQ05Jo" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="item" data-w="280" data-h="157">
+                <iframe style="width:100%;height:100%" src="http://www.youtube.com/embed/DlM2CWNTQ84" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <p style="margin-top:60px;border-top:1px solid #eee;padding-top:30px">
+            This plugin is used in production on <a href="http://pixabay.com/">Pixabay.com</a>,
+            where you can see flexImages at work in various locations and with all available options.
+            Please report any bugs and issues at the <a href="https://github.com/Pixabay/jQuery-flexImages">GitHub repositiory</a>.
+        </p>
+        <p>This software is released as Open Source under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a> by <a href="http://pixabay.com/users/Simon/">Simon Steinberger / Pixabay.com</a>.</p>
+    </div>
+
+    <div style="background:#fafafa;border-top:1px solid #eee;padding:15px;font-size:.9em">
+        <div style="max-width:900px;margin:auto;padding:0 10px">
+            Released 2014 by <a href="http://pixabay.com/">Pixabay.com</a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="jquery.flex-images.js"></script>
+    <script>
+        $('#demo1').flexImages({rowHeight: 140});
+        $('#demo2').flexImages({rowHeight: 120, truncate: 1, maxRows: 2});
+        $('#demo3').flexImages({object: 'iframe', rowHeight: 200, truncate: 1});
+    </script>
+</body>
+</html>
