@@ -16,8 +16,14 @@ http://goodies.pixabay.com/jquery/flex-images/demo.html
 ## Features
 
 * Lightweight: 1.2 kB of JavaScript - less than 0.6 kB gzipped
-* Source images can have any size
-* Works on more than just images, e.g. videos or plain text
+* Source images/objects can have any size
+* Works with more than just images, e.g. videos, iframes and plain text
+* Responsive
+* Equal margins between images controlled via CSS
+* No cropping or reordering
+* AJAX ready, e.g. for infinite scrolling
+* Support for lazy loading of images and iframe contents
+* Layout options to control e.g. the maximum number of rows - or whether or not to display an incomplete (last) row.
 
 ## Changelog
 

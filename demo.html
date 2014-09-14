@@ -43,6 +43,17 @@
         /* Pure CSS */
         .pure-button { margin: 5px 0; text-decoration: none !important; }
         .button-lg { margin: 5px 0; padding: .65em 1.6em; font-size: 105%; }
+
+        /* demo4 */
+        #demo4 .item { margin: 0 1px 10px 1px; border: 0; }
+        #demo4 .item .img { position: absolute; left: 0; top: 0; right: 2px; bottom: 20px; }
+        #demo4 .bottom { position: absolute; left: 2px; bottom: 0; right: 2px; font-size: 13px; height: 18px; }
+
+        /* demo5 */
+        #demo5 .over { position: absolute; bottom: 0; left: 0; right: 0; padding: 4px 6px; font-size: 13px; color: #fff; background: #222; background: rgba(0,0,0,.7); }
+
+        /* demo6 */
+        #demo6 a { display: block; position: absolute; top: 0; right: 0; bottom: -12px; left: 0; }
     </style>
     <link rel="stylesheet" href="jquery.flex-images.css">
 </head>
@@ -64,8 +75,14 @@
         </p>
         <ul>
             <li>Ridiculously tiny: 1.2 kB of JavaScript - less than 0.6 kB gzipped</li>
-            <li>Source images can have any size</li>
-            <li>Works on more than just images, e.g. videos or plain text</li>
+            <li>Source images/objects can have any size</li>
+            <li>Works with more than just images, e.g. videos, iframes and plain text</li>
+            <li>Responsive</li>
+            <li>Equal margins between images controlled via CSS</li>
+            <li>No cropping or reordering</li>
+            <li>AJAX ready, e.g. for infinite scrolling</li>
+            <li>Support for lazy loading of images and iframe contents</li>
+            <li>Layout options to control e.g. the maximum number of rows - or whether or not to display an incomplete (last) row.</li>
         </ul>
         <p>
             This plugin was developed by and for <a href="http://pixabay.com/">Pixabay.com</a> - an international repository for sharing free public domain images.
@@ -167,22 +184,26 @@ $(<b>'.flex-images'</b>).flexImages({rowHeight: <em>140</em>});</pre>
         <h3>More Examples</h3>
         <p>Please take a look at the source code of this page to see how these demos work.</p>
 
-        <p>1. Fixed number of two complete rows with lazy loading of images; only images that are actually visible are retrieved from the server:</p>
+        <p style="margin:0 0 8px">1. Fixed number of two complete rows with lazy loading of images; only images that are actually visible are retrieved from the server:</p>
         <div id="demo2" class="flex-images">
-            <div class="item" data-w="200" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/200/150/?31"></div>
-            <div class="item" data-w="250" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/250/150/?32"></div>
-            <div class="item" data-w="150" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/150/150/?33"></div>
-            <div class="item" data-w="150" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/150/150/?34"></div>
-            <div class="item" data-w="200" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/200/150/?35"></div>
-            <div class="item" data-w="100" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/100/150/?36"></div>
-            <div class="item" data-w="180" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/180/150/?37"></div>
-            <div class="item" data-w="185" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/185/150/?38"></div>
-            <div class="item" data-w="350" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/350/150/?39"></div>
-            <div class="item" data-w="200" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/200/150/?40"></div>
-            <div class="item" data-w="165" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/165/150/?41"></div>
+            <div class="item" data-w="200" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/200/150/?1"></div>
+            <div class="item" data-w="250" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/250/150/?2"></div>
+            <div class="item" data-w="150" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/150/150/?3"></div>
+            <div class="item" data-w="150" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/150/150/?4"></div>
+            <div class="item" data-w="200" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/200/150/?5"></div>
+            <div class="item" data-w="100" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/100/150/?6"></div>
+            <div class="item" data-w="180" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/180/150/?7"></div>
+            <div class="item" data-w="185" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/185/150/?8"></div>
+            <div class="item" data-w="350" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/350/150/?9"></div>
+            <div class="item" data-w="200" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/200/150/?10"></div>
+            <div class="item" data-w="165" data-h="150"><img src="blank.gif" data-src="http://lorempixel.com/165/150/?11"></div>
         </div>
+        <p style="margin:10px 0">
+            For lazy loading of images or iframes, it's required to use a &quot;blank.gif&quot; pixel as the source of all images. The actual source URL must be given in a data-src attribute of the image.
+            On init, the plugin will replace the dummy src attribute (blank.gif) with the actual source URL for all visible images.
+        </p>
 
-        <p style="margin-top:60px">2. A fluid grid with video content and only full rows:</p>
+        <p style="margin:60px 0 8px">2. A fluid grid with video content and only full rows:</p>
         <div id="demo3" class="flex-images">
             <div class="item" data-w="280" data-h="157">
                 <iframe style="width:100%;height:100%" src="http://www.youtube.com/embed/JGCsyshUU-A" frameborder="0" allowfullscreen></iframe>
@@ -193,6 +214,82 @@ $(<b>'.flex-images'</b>).flexImages({rowHeight: <em>140</em>});</pre>
             <div class="item" data-w="280" data-h="157">
                 <iframe style="width:100%;height:100%" src="http://www.youtube.com/embed/DlM2CWNTQ84" frameborder="0" allowfullscreen></iframe>
             </div>
+        </div>
+
+        <p style="margin:60px 0 8px">3. Showing a title underneath + less margin between images:</p>
+        <div id="demo4" class="flex-images">
+            <div class="item" data-w="150" data-h="150">
+                <div class="img"><img src="http://lorempixel.com/150/150/?3"></div>
+                <div class="bottom">Caption 1</div>
+            </div>
+            <div class="item" data-w="150" data-h="150">
+                <div class="img"><img src="http://lorempixel.com/150/150/?4"></div>
+                <div class="bottom">Caption 2</div>
+            </div>
+            <div class="item" data-w="200" data-h="150">
+                <div class="img"><img src="http://lorempixel.com/200/150/?5"></div>
+                <div class="bottom">Caption 3</div>
+            </div>
+            <div class="item" data-w="100" data-h="150">
+                <div class="img"><img src="http://lorempixel.com/100/150/?6"></div>
+                <div class="bottom">Caption 4</div>
+            </div>
+            <div class="item" data-w="180" data-h="150">
+                <div class="img"><img src="http://lorempixel.com/180/150/?7"></div>
+                <div class="bottom">Caption 5</div>
+            </div>
+        </div>
+
+        <p style="margin:60px 0 8px">4. Overlaying caption - could be a link or a button, as well:</p>
+        <div id="demo5" class="flex-images">
+            <div class="item" data-w="150" data-h="150">
+                <img src="http://lorempixel.com/150/150/?3">
+                <div class="over">Caption 1</div>
+            </div>
+            <div class="item" data-w="150" data-h="150">
+                <img src="http://lorempixel.com/150/150/?4">
+                <div class="over">Caption 2</div>
+            </div>
+            <div class="item" data-w="200" data-h="150">
+                <img src="http://lorempixel.com/200/150/?5">
+                <div class="over">Caption 3</div>
+            </div>
+            <div class="item" data-w="100" data-h="150">
+                <img src="http://lorempixel.com/100/150/?6">
+                <div class="over">Caption 4</div>
+            </div>
+            <div class="item" data-w="180" data-h="150">
+                <img src="http://lorempixel.com/180/150/?7">
+                <div class="over">Caption 5</div>
+            </div>
+        </div>
+
+        <p style="margin:60px 0 8px">5. Cut off parts of the images, e.g. a Shutterstock ID:</p>
+        <div id="demo6" class="flex-images">
+            <div class="item" data-w="450" data-h="300">
+                <a target="_blank" href="http://pixabay.com/go/?t=shutterstock&amp;id=115679980">
+                    <img src="http://thumb1.shutterstock.com/photos/display_pic_with_logo/619663/115679980.jpg">
+                </a>
+            </div>
+            <div class="item" data-w="450" data-h="437">
+                <a target="_blank" href="http://pixabay.com/go/?t=shutterstock&amp;id=128624426">
+                    <img src="http://thumb9.shutterstock.com/photos/display_pic_with_logo/588718/128624426.jpg">
+                </a>
+            </div>
+            <div class="item" data-w="450" data-h="300">
+                <a target="_blank" href="http://pixabay.com/go/?t=shutterstock&amp;id=140507401">
+                    <img src="http://thumb7.shutterstock.com/photos/display_pic_with_logo/1312372/140507401.jpg">
+                </a>
+            </div>
+            <div class="item" data-w="450" data-h="298">
+                <a target="_blank" href="http://pixabay.com/go/?t=shutterstock&amp;id=167693018">
+                    <img src="http://thumb1.shutterstock.com/photos/display_pic_with_logo/1014806/167693018.jpg">
+                </a>
+            </div>
+        </div>
+        <p style="margin:15px 0 5px">Original (uncut) first image with Shutterstock ID at the bottom:</p>
+        <div>
+            <img style="max-width:100%" src="http://thumb1.shutterstock.com/photos/display_pic_with_logo/619663/115679980.jpg">
         </div>
 
         <p style="margin-top:60px;border-top:1px solid #eee;padding-top:30px">
@@ -215,6 +312,9 @@ $(<b>'.flex-images'</b>).flexImages({rowHeight: <em>140</em>});</pre>
         $('#demo1').flexImages({rowHeight: 140});
         $('#demo2').flexImages({rowHeight: 120, truncate: 1, maxRows: 2});
         $('#demo3').flexImages({object: 'iframe', rowHeight: 200, truncate: 1});
+        $('#demo4').flexImages({ truncate: 1 });
+        $('#demo5').flexImages({ truncate: 1 });
+        $('#demo6').flexImages({ truncate: 1 });
     </script>
 </body>
 </html>
