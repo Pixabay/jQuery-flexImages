@@ -1,5 +1,5 @@
 /*
-	jQuery flexImages v1.0.0
+	jQuery flexImages v1.0.1
     Copyright (c) 2014 Simon Steinberger / Pixabay
     GitHub: https://github.com/Pixabay/jQuery-flexImages
 	License: http://www.opensource.org/licenses/mit-license.php
@@ -7,7 +7,7 @@
 
 (function($){
     $.fn.flexImages = function(options){
-        var o = $.extend({ container: '.item', object: 'img', rowHeight: 180, maxRows: 0, truncate: false, cutBottom: 0 }, options);
+        var o = $.extend({ container: '.item', object: 'img', rowHeight: 180, maxRows: 0, truncate: false }, options);
         return this.each(function(){
             var $this = $(this), $items = $(o.container, $this), items = [], i = $items.eq(0), t = new Date().getTime();
             o.margin = i.outerWidth(true) - i.innerWidth();
@@ -33,9 +33,8 @@
             if (o.maxRows && rows > o.maxRows || o.truncate && lastRow) row[x][0].hide();
             else {
                 if (row[x][5]) { row[x][4].attr('src', row[x][5]); row[x][5] = ''; }
-                row[x][0].css({ width: new_w, height: row_h - o.cutBottom*ratio }).show();
+                row[x][0].css({ width: new_w, height: row_h }).show();
             }
-            if (o.cutBottom) row[x][4].css({ width: new_w, height: row_h });
         }
 
         for (i=0; i<items.length; i++) {

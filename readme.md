@@ -21,6 +21,10 @@ http://goodies.pixabay.com/jquery/flex-images/demo.html
 
 ## Changelog
 
+### Version 1.0.1 - 2014/09/14
+
+* Cleaned up JavaScript code.
+
 ### Version 1.0.0 - 2014/09/14
 
 * Initial release
