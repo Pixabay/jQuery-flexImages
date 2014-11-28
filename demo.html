@@ -95,23 +95,21 @@
 
     <div style="max-width:908px;margin:auto;padding:0 10px 10px">
         <div id="demo1" class="flex-images">
-            <div class="item" data-w="200" data-h="150"><img src="http://unsplash.it/200/150/"></div>
-            <div class="item" data-w="250" data-h="150"><img src="http://unsplash.it/250/150/"></div>
-            <div class="item" data-w="150" data-h="150"><img src="http://unsplash.it/150/150/"></div>
-            <div class="item" data-w="155" data-h="150"><img src="http://unsplash.it/155/150/"></div>
-            <div class="item" data-w="205" data-h="150"><img src="http://unsplash.it/205/150/"></div>
-            <div class="item" data-w="110" data-h="150"><img src="http://unsplash.it/110/150/"></div>
-            <div class="item" data-w="180" data-h="150"><img src="http://unsplash.it/180/150/"></div>
-            <div class="item" data-w="185" data-h="150"><img src="http://unsplash.it/185/150/"></div>
-            <div class="item" data-w="320" data-h="150"><img src="http://unsplash.it/320/150/"></div>
-            <div class="item" data-w="210" data-h="150"><img src="http://unsplash.it/210/150/"></div>
-            <div class="item" data-w="165" data-h="150"><img src="http://unsplash.it/165/150/"></div>
-            <div class="item" data-w="175" data-h="150"><img src="http://unsplash.it/175/150/"></div>
-            <div class="item" data-w="120" data-h="150"><img src="http://unsplash.it/120/150/"></div>
-            <div class="item" data-w="115" data-h="150"><img src="http://unsplash.it/115/150/"></div>
-            <div class="item" data-w="140" data-h="150"><img src="http://unsplash.it/140/150/"></div>
-            <div class="item" data-w="200" data-h="155"><img src="http://unsplash.it/200/155/"></div>
-            <div class="item" data-w="170" data-h="150"><img src="http://unsplash.it/170/150/"></div>
+            <div class="item" data-w="219" data-h="180"><img src="images/1.jpg"></div>
+            <div class="item" data-w="279" data-h="180"><img src="images/2.jpg"></div>
+            <div class="item" data-w="270" data-h="180"><img src="images/3.jpg"></div>
+            <div class="item" data-w="270" data-h="180"><img src="images/4.jpg"></div>
+            <div class="item" data-w="147" data-h="180"><img src="images/5.jpg"></div>
+            <div class="item" data-w="276" data-h="180"><img src="images/6.jpg"></div>
+            <div class="item" data-w="319" data-h="180"><img src="images/7.jpg"></div>
+            <div class="item" data-w="270" data-h="180"><img src="images/8.jpg"></div>
+            <div class="item" data-w="240" data-h="180"><img src="images/9.jpg"></div>
+            <div class="item" data-w="270" data-h="180"><img src="images/10.jpg"></div>
+            <div class="item" data-w="240" data-h="180"><img src="images/11.jpg"></div>
+            <div class="item" data-w="270" data-h="180"><img src="images/12.jpg"></div>
+            <div class="item" data-w="283" data-h="180"><img src="images/13.jpg"></div>
+            <div class="item" data-w="271" data-h="180"><img src="images/14.jpg"></div>
+            <div class="item" data-w="258" data-h="180"><img src="images/15.jpg"></div>
         </div>
     </div>
 
@@ -141,7 +139,7 @@ $(selector).flexImages({key1: value1, key2: value2});
         </table>
 
         <h3 style="margin-top:.8em;border-top:1px solid #eee;padding-top:1.8em">Example Code</h3>
-        <p><b>HTML Markup for the on page live demo</b></p>
+        <p><b>HTML Markup</b></p>
 
         <pre>
 &lt;div class=<b>&quot;flex-images&quot;</b>&gt;
@@ -159,9 +157,6 @@ $(selector).flexImages({key1: value1, key2: value2});
     &lt;div class=<b>&quot;item&quot;</b> data-w=<b>&quot;150&quot;</b> data-h=<b>&quot;150&quot;</b>&gt;&lt;img src=<b>&quot;image12.jpg&quot;</b>&gt;&lt;/div&gt;
     &lt;div class=<b>&quot;item&quot;</b> data-w=<b>&quot;120&quot;</b> data-h=<b>&quot;150&quot;</b>&gt;&lt;img src=<b>&quot;image13.jpg&quot;</b>&gt;&lt;/div&gt;
     &lt;div class=<b>&quot;item&quot;</b> data-w=<b>&quot;120&quot;</b> data-h=<b>&quot;150&quot;</b>&gt;&lt;img src=<b>&quot;image14.jpg&quot;</b>&gt;&lt;/div&gt;
-    &lt;div class=<b>&quot;item&quot;</b> data-w=<b>&quot;140&quot;</b> data-h=<b>&quot;150&quot;</b>&gt;&lt;img src=<b>&quot;image15.jpg&quot;</b>&gt;&lt;/div&gt;
-    &lt;div class=<b>&quot;item&quot;</b> data-w=<b>&quot;200&quot;</b> data-h=<b>&quot;150&quot;</b>&gt;&lt;img src=<b>&quot;image16.jpg&quot;</b>&gt;&lt;/div&gt;
-    &lt;div class=<b>&quot;item&quot;</b> data-w=<b>&quot;170&quot;</b> data-h=<b>&quot;150&quot;</b>&gt;&lt;img src=<b>&quot;image17.jpg&quot;</b>&gt;&lt;/div&gt;
 &lt;/div&gt;</pre>
 
         <p>
@@ -187,17 +182,17 @@ $(<b>'.flex-images'</b>).flexImages({rowHeight: <em>140</em>});</pre>
 
         <p style="margin:0 0 8px">1. Fixed number of two complete rows with lazy loading of images; only images that are actually visible are retrieved from the server:</p>
         <div id="demo2" class="flex-images">
-            <div class="item" data-w="220" data-h="150"><img src="blank.gif" data-src="http://unsplash.it/220/150/"></div>
-            <div class="item" data-w="250" data-h="150"><img src="blank.gif" data-src="http://unsplash.it/250/150/"></div>
-            <div class="item" data-w="150" data-h="150"><img src="blank.gif" data-src="http://unsplash.it/150/150/"></div>
-            <div class="item" data-w="155" data-h="150"><img src="blank.gif" data-src="http://unsplash.it/155/150/"></div>
-            <div class="item" data-w="205" data-h="150"><img src="blank.gif" data-src="http://unsplash.it/205/150/"></div>
-            <div class="item" data-w="110" data-h="150"><img src="blank.gif" data-src="http://unsplash.it/110/150/"></div>
-            <div class="item" data-w="180" data-h="150"><img src="blank.gif" data-src="http://unsplash.it/180/150/"></div>
-            <div class="item" data-w="185" data-h="150"><img src="blank.gif" data-src="http://unsplash.it/185/150/"></div>
-            <div class="item" data-w="320" data-h="150"><img src="blank.gif" data-src="http://unsplash.it/320/150/"></div>
-            <div class="item" data-w="210" data-h="150"><img src="blank.gif" data-src="http://unsplash.it/210/150/"></div>
-            <div class="item" data-w="165" data-h="150"><img src="blank.gif" data-src="http://unsplash.it/165/150/"></div>
+            <div class="item" data-w="219" data-h="180"><img src="blank.gif" data-src="images/1.jpg"></div>
+            <div class="item" data-w="279" data-h="180"><img src="blank.gif" data-src="images/2.jpg"></div>
+            <div class="item" data-w="270" data-h="180"><img src="blank.gif" data-src="images/3.jpg"></div>
+            <div class="item" data-w="270" data-h="180"><img src="blank.gif" data-src="images/4.jpg"></div>
+            <div class="item" data-w="147" data-h="180"><img src="blank.gif" data-src="images/5.jpg"></div>
+            <div class="item" data-w="276" data-h="180"><img src="blank.gif" data-src="images/6.jpg"></div>
+            <div class="item" data-w="319" data-h="180"><img src="blank.gif" data-src="images/7.jpg"></div>
+            <div class="item" data-w="270" data-h="180"><img src="blank.gif" data-src="images/8.jpg"></div>
+            <div class="item" data-w="240" data-h="180"><img src="blank.gif" data-src="images/9.jpg"></div>
+            <div class="item" data-w="270" data-h="180"><img src="blank.gif" data-src="images/10.jpg"></div>
+            <div class="item" data-w="240" data-h="180"><img src="blank.gif" data-src="images/11.jpg"></div>
         </div>
         <p style="margin:10px 0">
             For lazy loading of images or iframes, it's required to use a &quot;blank.gif&quot; pixel as the source of all images. The actual source URL must be given in a data-src attribute of the image.
@@ -219,48 +214,48 @@ $(<b>'.flex-images'</b>).flexImages({rowHeight: <em>140</em>});</pre>
 
         <p style="margin:60px 0 8px">3. Showing a title underneath + less margin between images:</p>
         <div id="demo4" class="flex-images">
-            <div class="item" data-w="220" data-h="170">
-                <div class="img"><img src="blank.gif" data-src="http://unsplash.it/220/150/"></div>
+            <div class="item" data-w="219" data-h="197">
+                <div class="img"><img src="blank.gif" data-src="images/1.jpg"></div>
                 <div class="bottom">Caption 1</div>
             </div>
-            <div class="item" data-w="250" data-h="170">
-                <div class="img"><img src="blank.gif" data-src="http://unsplash.it/250/150/"></div>
+            <div class="item" data-w="279" data-h="197">
+                <div class="img"><img src="blank.gif" data-src="images/2.jpg"></div>
                 <div class="bottom">Caption 2</div>
             </div>
-            <div class="item" data-w="200" data-h="170">
-                <div class="img"><img src="blank.gif" data-src="http://unsplash.it/200/150/"></div>
+            <div class="item" data-w="270" data-h="197">
+                <div class="img"><img src="blank.gif" data-src="images/3.jpg"></div>
                 <div class="bottom">Caption 3</div>
             </div>
-            <div class="item" data-w="155" data-h="170">
-                <div class="img"><img src="blank.gif" data-src="http://unsplash.it/155/150/"></div>
+            <div class="item" data-w="270" data-h="197">
+                <div class="img"><img src="blank.gif" data-src="images/4.jpg"></div>
                 <div class="bottom">Caption 4</div>
             </div>
-            <div class="item" data-w="205" data-h="170">
-                <div class="img"><img src="blank.gif" data-src="http://unsplash.it/205/150/"></div>
+            <div class="item" data-w="147" data-h="197">
+                <div class="img"><img src="blank.gif" data-src="images/5.jpg"></div>
                 <div class="bottom">Caption 5</div>
             </div>
         </div>
 
         <p style="margin:60px 0 8px">4. Overlaying caption - could be a link or a button, as well:</p>
         <div id="demo5" class="flex-images">
-            <div class="item" data-w="220" data-h="150">
-                <img src="blank.gif" data-src="http://unsplash.it/220/150/">
+            <div class="item" data-w="219" data-h="180">
+                <img src="blank.gif" data-src="images/1.jpg">
                 <div class="over">Caption 1</div>
             </div>
-            <div class="item" data-w="250" data-h="150">
-                <img src="blank.gif" data-src="http://unsplash.it/250/150/">
+            <div class="item" data-w="279" data-h="180">
+                <img src="blank.gif" data-src="images/2.jpg">
                 <div class="over">Caption 2</div>
             </div>
-            <div class="item" data-w="200" data-h="150">
-                <img src="blank.gif" data-src="http://unsplash.it/200/150/">
+            <div class="item" data-w="270" data-h="180">
+                <img src="blank.gif" data-src="images/3.jpg">
                 <div class="over">Caption 3</div>
             </div>
-            <div class="item" data-w="155" data-h="150">
-                <img src="blank.gif" data-src="http://unsplash.it/155/150/">
+            <div class="item" data-w="270" data-h="180">
+                <img src="blank.gif" data-src="images/4.jpg">
                 <div class="over">Caption 4</div>
             </div>
-            <div class="item" data-w="205" data-h="150">
-                <img src="blank.gif" data-src="http://unsplash.it/205/150/">
+            <div class="item" data-w="147" data-h="180">
+                <img src="blank.gif" data-src="images/5.jpg">
                 <div class="over">Caption 5</div>
             </div>
         </div>
@@ -300,8 +295,7 @@ $(<b>'.flex-images'</b>).flexImages({rowHeight: <em>140</em>});</pre>
         </p>
 
         <div style="margin:40px 0;overflow:hidden">
-            <iframe style="float:left;margin-right:15px" src="//ghbtns.com/github-btn.html?user=Pixabay&repo=jQuery-flexImages&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-            <iframe style="float:left;margin-right:15px" src="//ghbtns.com/github-btn.html?user=Pixabay&repo=jQuery-flexImages&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+            <span id="github_social"></span>
             <div style="float:left;margin-right:5px">
                 <a href="#" data-width="70" class="twitter-share-button" data-text="jQuery flexImages Plugin"></a>
             </div>
@@ -333,9 +327,15 @@ $(<b>'.flex-images'</b>).flexImages({rowHeight: <em>140</em>});</pre>
         $('#demo5').flexImages({ truncate: 1 });
         $('#demo6').flexImages({ truncate: 1 });
 
-        (function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "https://connect.facebook.net/en_US/all.js#xfbml=1";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));
-        (function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();
-        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+        if (~window.location.href.indexOf('http')) {
+            (function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=380275075435187&version=v2.0";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));
+            (function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+            $('#github_social').html('\
+                <iframe style="float:left;margin-right:15px" src="//ghbtns.com/github-btn.html?user=Pixabay&repo=jQuery-flexImages&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>\
+                <iframe style="float:left;margin-right:15px" src="//ghbtns.com/github-btn.html?user=Pixabay&repo=jQuery-flexImages&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>\
+            ');
+        }
     </script>
 </body>
 </html>
