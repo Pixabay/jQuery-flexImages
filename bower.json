@@ -29,8 +29,6 @@
         "url": "http://www.opensource.org/licenses/mit-license.php"
     }],
     "ignore": [
-        ".gitattributes",
-        ".gitignore",
         "bower.json",
         "demo.html",
         "flex-images.jquery.json",
