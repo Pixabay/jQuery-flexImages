@@ -1,8 +1,8 @@
 /*
-	JavaScript flexImages v1.0.0 beta
+    JavaScript flexImages v1.0.0 beta
     Copyright (c) 2014 Simon Steinberger / Pixabay
     GitHub: https://github.com/Pixabay/jQuery-flexImages
-	License: http://www.opensource.org/licenses/mit-license.php
+    License: http://www.opensource.org/licenses/mit-license.php
 
     Vanilla JS version of jQuery-flexImages
     Works with Chrome, Firefox, and Internet Explorer 9+.
