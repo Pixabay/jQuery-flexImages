@@ -27,6 +27,10 @@ http://goodies.pixabay.com/jquery/flex-images/demo.html
 
 ## Changelog
 
+### Version 1.0.2 - 2015/04/01
+
+* Improved rendering performance by using Vanilla JS.
+
 ### Version 1.0.1 - 2014/09/14
 
 * Cleaned up JavaScript code.
