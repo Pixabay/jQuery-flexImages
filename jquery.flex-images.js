@@ -9,8 +9,9 @@
     $.fn.flexImages = function(options){
         var o = $.extend({ container: '.item', object: 'img', rowHeight: 180, maxRows: 0, truncate: false }, options);
         return this.each(function(){
-            var grid = $(this), containers = $(o.container, grid), items = [], t = new Date().getTime();
-            o.margin = $(containers[0]).outerWidth(true) - $(containers[0]).innerWidth();
+            var grid = $(this), containers = $(grid).find(o.container), items = [], t = new Date().getTime(),
+                s = window.getComputedStyle ? getComputedStyle(containers[0], null) : containers[0].currentStyle;
+            o.margin = parseInt(s.marginLeft || 0) + parseInt(s.marginRight || 0) + parseInt(s.borderLeftWidth || 0) + parseInt(s.borderRightWidth || 0)
             for (j=0;j<containers.length;j++) {
                 var c = containers[j],
                     w = parseInt(c.getAttribute('data-w')),
@@ -36,7 +37,7 @@
                 if (row[x][5]) { row[x][4].attr('src', row[x][5]); row[x][5] = ''; }
                 row[x][0].style.width = new_w+'px';
                 row[x][0].style.height = row_h+'px';
-                row[x][0].style.display = '';
+                row[x][0].style.display = 'block';
             }
         }
 
