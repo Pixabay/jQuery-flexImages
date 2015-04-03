@@ -9,6 +9,7 @@
 
     Example init:
     new flexImages({selector: '#demo1', rowHeight: 140});
+    "selector" can be a CSS selector string or a DOM node.
     To reload a modified set of images or to change grid options, flexImages can be called multiple times on the same DOM element.
 */
 
@@ -26,7 +27,7 @@
         if (arguments[0] && typeof arguments[0] === 'object') {
             for (var k in arguments[0]) { if (Object.prototype.hasOwnProperty.call(arguments[0], k)) o[k]=arguments[0][k]; }
         }
-        var grids = document.querySelectorAll(o.selector);
+        var grids = typeof o.selector == 'object' ? [o.selector] : document.querySelectorAll(o.selector);
 
         for (i=0;i<grids.length;i++) {
             var grid = grids[i], containers = grid.querySelectorAll(o.container), items = [], t = new Date().getTime();
