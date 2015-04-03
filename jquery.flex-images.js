@@ -7,7 +7,7 @@
 
 (function($){
     $.fn.flexImages = function(options){
-        var o = $.extend({ container: '.item', object: 'img', rowHeight: 180, maxRows: 0, truncate: false }, options);
+        var o = $.extend({ container: '.item', object: 'img', rowHeight: 180, maxRows: 0, truncate: 0 }, options);
         return this.each(function(){
             var grid = $(this), containers = $(grid).find(o.container), items = [], t = new Date().getTime(),
                 s = window.getComputedStyle ? getComputedStyle(containers[0], null) : containers[0].currentStyle;
