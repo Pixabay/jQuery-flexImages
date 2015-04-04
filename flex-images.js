@@ -41,11 +41,13 @@
                 items.push([c, w, h, norm_w, obj, obj.getAttribute('data-src')]);
             }
             makeGrid(grid, items, o);
-            window['flexImages_listener'+t] = function() { makeGrid(grid, items, o); };
+            tempf = function() { makeGrid(grid, items, o); };
             if (document.addEventListener) {
+                window['flexImages_listener'+t] = tempf;
                 window.removeEventListener('resize', window['flexImages_listener'+grid.getAttribute('data-flex-t')]);
                 window.addEventListener('resize', window['flexImages_listener'+t]);
-            }
+            } else
+                grid.onresize = tempf;
             grid.setAttribute('data-flex-t', t)
         }
     }
