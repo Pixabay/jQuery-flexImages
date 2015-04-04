@@ -5,7 +5,7 @@
     License: http://www.opensource.org/licenses/mit-license.php
 
     Vanilla JS version of jQuery-flexImages
-    Works with Chrome, Firefox, and Internet Explorer 9+.
+    Works with Chrome, Firefox, and Internet Explorer 8+.
 
     Example init:
     new flexImages({selector: '#demo1', rowHeight: 140});
@@ -17,8 +17,8 @@
 (function(){
     function elWidth(el, outerw, innerw) {
         var width = el.offsetWidth, style = window.getComputedStyle ? getComputedStyle(el, null) : el.currentStyle;
-        if (outerw) width += parseInt(style.marginLeft || 0) + parseInt(style.marginRight || 0);
-        else if (innerw) width -= parseInt(style.borderLeftWidth || 0) + parseInt(style.borderRightWidth || 0);
+        if (outerw) width += (parseInt(style.marginLeft) || 0) + (parseInt(style.marginRight) || 0);
+        else if (innerw) width -= (parseInt(style.borderLeftWidth) || 0) + (parseInt(style.borderRightWidth) || 0);
         return width
     }
 
@@ -42,8 +42,10 @@
             }
             makeGrid(grid, items, o);
             window['flexImages_listener'+t] = function() { makeGrid(grid, items, o); };
-            window.removeEventListener('resize', window['flexImages_listener'+grid.getAttribute('data-flex-t')]);
-            window.addEventListener('resize', window['flexImages_listener'+t]);
+            if (document.addEventListener) {
+                window.removeEventListener('resize', window['flexImages_listener'+grid.getAttribute('data-flex-t')]);
+                window.addEventListener('resize', window['flexImages_listener'+t]);
+            }
             grid.setAttribute('data-flex-t', t)
         }
     }
@@ -58,7 +60,7 @@
                 if (row[x][5]) { row[x][4].setAttribute('src', row[x][5]); row[x][5] = ''; }
                 row[x][0].style.width = new_w+'px';
                 row[x][0].style.height = row_h+'px';
-                row[x][0].style.display = '';
+                row[x][0].style.display = 'block';
             }
         }
 
