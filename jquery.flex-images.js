@@ -32,7 +32,7 @@
 
         // define inside makeGrid to access variables in scope
         function _helper(lastRow){
-            if (o.maxRows && rows > o.maxRows || o.truncate && lastRow) row[x][0].style.display = 'none';
+            if (o.maxRows && rows > o.maxRows || o.truncate && lastRow && rows > 1) row[x][0].style.display = 'none';
             else {
                 if (row[x][5]) { row[x][4].attr('src', row[x][5]); row[x][5] = ''; }
                 row[x][0].style.width = new_w+'px';
