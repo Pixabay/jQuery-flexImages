@@ -13,7 +13,6 @@
     To reload a modified set of images or to change grid options, flexImages can be called multiple times on the same DOM element.
 */
 
-
 (function(){
     function elWidth(el, outerw, innerw) {
         var width = el.offsetWidth, style = window.getComputedStyle ? getComputedStyle(el, null) : el.currentStyle;
