@@ -30,6 +30,7 @@
 
         for (i=0;i<grids.length;i++) {
             var grid = grids[i], containers = grid.querySelectorAll(o.container), items = [], t = new Date().getTime();
+            if (!containers.length) continue;
             o.margin = elWidth(containers[0], true) - elWidth(containers[0], false, true);
             for (j=0;j<containers.length;j++) {
                 var c = containers[j],
