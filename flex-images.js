@@ -23,9 +23,7 @@
 
     this.flexImages = function(){
         var o = { selector: 0, container: '.item', object: 'img', rowHeight: 180, maxRows: 0, truncate: 0 };
-        if (arguments[0] && typeof arguments[0] === 'object') {
-            for (var k in arguments[0]) { if (Object.prototype.hasOwnProperty.call(arguments[0], k)) o[k]=arguments[0][k]; }
-        }
+        for (var k in arguments[0]) { if (Object.prototype.hasOwnProperty.call(arguments[0], k)) o[k]=arguments[0][k]; }
         var grids = typeof o.selector == 'object' ? [o.selector] : document.querySelectorAll(o.selector);
 
         for (i=0;i<grids.length;i++) {
