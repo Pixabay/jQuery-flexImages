@@ -72,7 +72,7 @@
 
 	return function(options){
 		if (!document.querySelector) return;
-        var o = { selector: null, container: '.item', object: 'img', rowHeight: 180, maxRows: 0, truncate: 0 };
+        var o = { selector: 0, container: '.item', object: 'img', rowHeight: 180, maxRows: 0, truncate: 0 };
         if (options && typeof options == 'object') {
             for (var k in options) { if (Object.prototype.hasOwnProperty.call(options, k)) o[k]=options[k]; }
         }

@@ -22,7 +22,7 @@
     }
 
     this.flexImages = function(){
-        var o = { selector: null, container: '.item', object: 'img', rowHeight: 180, maxRows: 0, truncate: 0 };
+        var o = { selector: 0, container: '.item', object: 'img', rowHeight: 180, maxRows: 0, truncate: 0 };
         if (arguments[0] && typeof arguments[0] === 'object') {
             for (var k in arguments[0]) { if (Object.prototype.hasOwnProperty.call(arguments[0], k)) o[k]=arguments[0][k]; }
         }
