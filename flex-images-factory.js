@@ -1,5 +1,5 @@
 /*
-    JavaScript flexImages v1.0.0
+    JavaScript flexImages v1.0.0 factory version
     Copyright (c) 2014 Simon Steinberger / Pixabay
     GitHub: https://github.com/Pixabay/jQuery-flexImages
     License: http://www.opensource.org/licenses/mit-license.php
