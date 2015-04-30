@@ -1,5 +1,5 @@
 /*
-    JavaScript flexImages v1.0.0 beta
+    JavaScript flexImages v1.0.0
     Copyright (c) 2014 Simon Steinberger / Pixabay
     GitHub: https://github.com/Pixabay/jQuery-flexImages
     License: http://www.opensource.org/licenses/mit-license.php
@@ -13,7 +13,16 @@
     To reload a modified set of images or to change grid options, flexImages can be called multiple times on the same DOM element.
 */
 
-(function(){
+(function(root, factory){
+	if (typeof define == 'function' && define.amd)
+		define('flexImages', factory(root));
+	else if (typeof exports == 'object')
+		module.exports = factory(root);
+	else
+		root.flexImages = factory(root);
+})(window || this, function(root){
+	'use strict';
+
     function elWidth(el, outerw, innerw) {
         var width = el.offsetWidth, style = window.getComputedStyle ? getComputedStyle(el, null) : el.currentStyle;
         if (outerw) width += (parseInt(style.marginLeft) || 0) + (parseInt(style.marginRight) || 0);
@@ -21,39 +30,8 @@
         return width
     }
 
-    this.flexImages = function(){
-        var o = { selector: null, container: '.item', object: 'img', rowHeight: 180, maxRows: 0, truncate: 0 };
-        if (arguments[0] && typeof arguments[0] === 'object') {
-            for (var k in arguments[0]) { if (Object.prototype.hasOwnProperty.call(arguments[0], k)) o[k]=arguments[0][k]; }
-        }
-        var grids = typeof o.selector == 'object' ? [o.selector] : document.querySelectorAll(o.selector);
-
-        for (i=0;i<grids.length;i++) {
-            var grid = grids[i], containers = grid.querySelectorAll(o.container), items = [], t = new Date().getTime();
-            if (!containers.length) continue;
-            o.margin = elWidth(containers[0], true) - elWidth(containers[0], false, true);
-            for (j=0;j<containers.length;j++) {
-                var c = containers[j],
-                    w = parseInt(c.getAttribute('data-w')),
-                    h = parseInt(c.getAttribute('data-h')),
-                    norm_w = w*(o.rowHeight/h), // normalized width
-                    obj = c.querySelector(o.object);
-                items.push([c, w, h, norm_w, obj, obj.getAttribute('data-src')]);
-            }
-            makeGrid(grid, items, o);
-            tempf = function() { makeGrid(grid, items, o); };
-            if (document.addEventListener) {
-                window['flexImages_listener'+t] = tempf;
-                window.removeEventListener('resize', window['flexImages_listener'+grid.getAttribute('data-flex-t')]);
-                window.addEventListener('resize', window['flexImages_listener'+t]);
-            } else
-                grid.onresize = tempf;
-            grid.setAttribute('data-flex-t', t)
-        }
-    }
-
     function makeGrid(grid, items, o, noresize){
-        var x, new_w, ratio = 1, rows = 1, max_w = elWidth(grid, false, true), row = [], row_width = 0, row_h = o.rowHeight;
+        var x, new_w, exact_w, ratio = 1, rows = 1, max_w = elWidth(grid, false, true), row = [], row_width = 0, h, row_h = o.rowHeight;
 
         // define inside makeGrid to access variables in scope
         function _helper(lastRow){
@@ -91,4 +69,36 @@
         // scroll bars added or removed during rendering new layout?
         if (!noresize && max_w != elWidth(grid, false, true)) makeGrid(grid, items, o, true);
     }
-}());
+
+	return function(options){
+		if (!document.querySelector) return;
+        var o = { selector: null, container: '.item', object: 'img', rowHeight: 180, maxRows: 0, truncate: 0 };
+        if (options && typeof options == 'object') {
+            for (var k in options) { if (Object.prototype.hasOwnProperty.call(options, k)) o[k]=options[k]; }
+        }
+        var grids = typeof o.selector == 'object' ? [o.selector] : document.querySelectorAll(o.selector);
+
+        for (var i=0;i<grids.length;i++) {
+            var grid = grids[i], containers = grid.querySelectorAll(o.container), items = [], t = new Date().getTime();
+            if (!containers.length) continue;
+            o.margin = elWidth(containers[0], true) - elWidth(containers[0], false, true);
+            for (var j=0;j<containers.length;j++) {
+                var c = containers[j],
+                    w = parseInt(c.getAttribute('data-w')),
+                    h = parseInt(c.getAttribute('data-h')),
+                    norm_w = w*(o.rowHeight/h), // normalized width
+                    obj = c.querySelector(o.object);
+                items.push([c, w, h, norm_w, obj, obj.getAttribute('data-src')]);
+            }
+            makeGrid(grid, items, o);
+            var tempf = function() { makeGrid(grid, items, o); };
+            if (document.addEventListener) {
+                window['flexImages_listener'+t] = tempf;
+                window.removeEventListener('resize', window['flexImages_listener'+grid.getAttribute('data-flex-t')]);
+                window.addEventListener('resize', window['flexImages_listener'+t]);
+            } else
+                grid.onresize = tempf;
+            grid.setAttribute('data-flex-t', t)
+        }
+	};
+});
