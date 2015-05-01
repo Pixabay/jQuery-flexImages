@@ -93,6 +93,7 @@
             if (document.addEventListener) {
                 window['flexImages_listener'+t] = tempf;
                 window.removeEventListener('resize', window['flexImages_listener'+grid.getAttribute('data-flex-t')]);
+                window['flexImages_listener'+grid.getAttribute('data-flex-t')] = null;
                 window.addEventListener('resize', window['flexImages_listener'+t]);
             } else
                 grid.onresize = tempf;
