@@ -26,7 +26,7 @@
         for (var k in arguments[0]) { if (Object.prototype.hasOwnProperty.call(arguments[0], k)) o[k]=arguments[0][k]; }
         var grids = typeof o.selector == 'object' ? [o.selector] : document.querySelectorAll(o.selector);
 
-        for (i=0;i<grids.length;i++) {
+        for (var i=0;i<grids.length;i++) {
             var grid = grids[i], containers = grid.querySelectorAll(o.container), items = [], t = new Date().getTime();
             if (!containers.length) continue;
             o.margin = elWidth(containers[0], true) - elWidth(containers[0], false, true);
