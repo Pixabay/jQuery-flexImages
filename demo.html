@@ -73,10 +73,10 @@
             Released under the <a href="http://www.opensource.org/licenses/mit-license.php">MIT License</a>.
             Source on <a href="https://github.com/Pixabay/jQuery-flexImages">Github</a> (<a href="https://github.com/Pixabay/jQuery-flexImages#changelog">changelog</a>).
             Compatible with jQuery 1.7.0+ in Firefox, Safari, Chrome, Opera, Internet Explorer 7+. No dependencies except the jQuery library.
-            Additionally, a <a href="https://github.com/Pixabay/jQuery-flexImages/blob/master/flex-images.js">vanilla JavaScript version</a> is included (jQuery not required), which works down to IE8.
+            A <a href="http://goodies.pixabay.com/javascript/flex-images/demo.html">vanilla JavaScript version</a> is available, which works down to IE8.
         </p>
         <ul>
-            <li>Ridiculously tiny: 1.2 kB of JavaScript - less than 0.6 kB gzipped</li>
+            <li>Ridiculously tiny: 1.4 kB of JavaScript - less than 0.7 kB gzipped</li>
             <li>Source images/objects can have any size</li>
             <li>Works with more than just images, e.g. videos, iframes and plain text</li>
             <li>Responsive</li>
@@ -120,9 +120,7 @@
             Include the stylesheet <span class="inline-code">jquery.flex-images.css</span> in the <span class="inline-code">&lt;head&gt;</span> section of your HTML document - and the JavaScript file <span class="inline-code">jquery.flex-images.min.js</span> after loading jQuery.
             flexImages accepts settings from an object of key/value pairs.
         </p>
-        <pre>
-$(selector).flexImages({key1: value1, key2: value2});
-</pre>
+        <pre>$(selector).flexImages({key1: value1, key2: value2});</pre>
         <p>
             To <b>update</b> any settings or to <b>reload</b> modified content, simply re-initialize flexImages again on the appropriate container.
             The plugin automatically prevents multiple bindings to one and the same element.
@@ -165,8 +163,7 @@ $(selector).flexImages({key1: value1, key2: value2});
         </p>
         <p><b>JavaScript code</b></p>
 
-        <pre>
-$(<b>'.flex-images'</b>).flexImages({rowHeight: <em>140</em>});</pre>
+        <pre>$(<b>'.flex-images'</b>).flexImages({rowHeight: <em>140</em>});</pre>
 
         <p>
             How it works: The plugin dynamically changes the width and height of all containers.

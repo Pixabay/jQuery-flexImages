@@ -15,7 +15,7 @@ http://goodies.pixabay.com/jquery/flex-images/demo.html
 
 ## Features
 
-* Lightweight: 1.2 kB of JavaScript - less than 0.6 kB gzipped
+* Lightweight: 1.4 kB of JavaScript - less than 0.7 kB gzipped
 * Source images/objects can have any size
 * Works with more than just images, e.g. videos, iframes and plain text
 * Responsive
