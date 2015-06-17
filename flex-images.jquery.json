@@ -21,7 +21,7 @@
 	],
 	"author": {
 		"name": "Simon Steinberger",
-		"url": "http://pixabay.com/users/Simon/",
+		"url": "https://pixabay.com/users/Simon/",
 		"email": "simon@pixabay.com"
 	},
 	"licenses": [
@@ -30,6 +30,6 @@
 			"url": "http://www.opensource.org/licenses/mit-license.php"
 		}
 	],
-	"homepage": "http://goodies.pixabay.com/jquery/flex-images/demo.html",
-	"demo": "http://goodies.pixabay.com/jquery/flex-images/demo.html"
+	"homepage": "https://goodies.pixabay.com/jquery/flex-images/demo.html",
+	"demo": "https://goodies.pixabay.com/jquery/flex-images/demo.html"
 }
