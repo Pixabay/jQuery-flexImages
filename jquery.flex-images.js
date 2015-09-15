@@ -11,7 +11,7 @@
         return this.each(function(){
             var grid = $(this), containers = $(grid).find(o.container), items = [], t = new Date().getTime(),
                 s = window.getComputedStyle ? getComputedStyle(containers[0], null) : containers[0].currentStyle;
-            o.margin = (parseInt(s.marginLeft) || 0) + (parseInt(s.marginRight) || 0) + (parseInt(s.borderLeftWidth) || 0) + (parseInt(s.borderRightWidth) || 0);
+            o.margin = (parseInt(s.marginLeft) || 0) + (parseInt(s.marginRight) || 0) + (Math.round(parseFloat(s.borderLeftWidth)) || 0) + (Math.round(parseFloat(s.borderRightWidth)) || 0);
             for (j=0;j<containers.length;j++) {
                 var c = containers[j],
                     w = parseInt(c.getAttribute('data-w')),
