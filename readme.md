@@ -27,6 +27,10 @@ https://goodies.pixabay.com/jquery/flex-images/demo.html
 
 ## Changelog
 
+### Version 1.0.3 - 2015/10/30
+
+* Fixed error in calculation that caused the last image in each row to be cut off
+
 ### Version 1.0.2 - 2015/04/01
 
 * Improved rendering performance by using Vanilla JS.

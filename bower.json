@@ -1,7 +1,7 @@
 {
     "name": "jquery-flex-images",
 	"description": "A lightweight jQuery plugin for creating fluid galleries as seen on Flickr and Google Images.",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "dependencies": {
         "jquery": ">=1.7"
     },
