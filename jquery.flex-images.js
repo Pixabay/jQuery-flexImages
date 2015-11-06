@@ -50,7 +50,7 @@
                 for (x=0; x<row.length; x++) {
                     new_w = Math.ceil(row[x][2]*ratio);
                     exact_w += new_w + o.margin;
-                    if (exact_w > max_w) new_w -= exact_w - max_w;
+                    if (exact_w > max_w) new_w -= exact_w - max_w + 1;
                     _helper();
                 }
                 // reset for next row
