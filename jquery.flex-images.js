@@ -1,18 +1,18 @@
 /*
-	jQuery flexImages v1.0.3
-    Copyright (c) 2014 Simon Steinberger / Pixabay
-    GitHub: https://github.com/Pixabay/jQuery-flexImages
-	License: http://www.opensource.org/licenses/mit-license.php
-*/
+ jQuery flexImages v1.0.3
+ Copyright (c) 2014 Simon Steinberger / Pixabay
+ GitHub: https://github.com/Pixabay/jQuery-flexImages
+ License: http://www.opensource.org/licenses/mit-license.php
+ */
 
 (function($){
     $.fn.flexImages = function(options){
-        var o = $.extend({ container: '.item', object: 'img', rowHeight: 180, maxRows: 0, truncate: 0 }, options);
+        var o = $.extend({ container: '.item', object: 'img', rowHeight: 180, maxRows: 0, truncate: 0}, options);
         return this.each(function(){
             var grid = $(this), containers = $(grid).find(o.container), items = [], t = new Date().getTime(),
                 s = window.getComputedStyle ? getComputedStyle(containers[0], null) : containers[0].currentStyle;
             o.margin = (parseInt(s.marginLeft) || 0) + (parseInt(s.marginRight) || 0) + (Math.round(parseFloat(s.borderLeftWidth)) || 0) + (Math.round(parseFloat(s.borderRightWidth)) || 0);
-            for (j=0;j<containers.length;j++) {
+            for (var j=0;j<containers.length;j++) {
                 var c = containers[j],
                     w = parseInt(c.getAttribute('data-w')),
                     norm_w = w*(o.rowHeight/parseInt(c.getAttribute('data-h'))), // normalized width
@@ -22,9 +22,13 @@
             makeGrid(grid, items, o);
             $(window).off('resize.flexImages'+grid.data('flex-t'));
             $(window).on('resize.flexImages'+t, function(){ makeGrid(grid, items, o); });
-            grid.data('flex-t', t)
+            grid.data('flex-t', t);
+            grid.on('destroyFlex', function () {
+                $(grid).find(o.container).attr('style', '');
+                $(window).off('resize.flexImages'+grid.data('flex-t'));
+            });
         });
-    }
+    };
 
     function makeGrid(grid, items, o, noresize){
         var x, new_w, ratio = 1, rows = 1, max_w = grid.width(), row = [], row_width = 0, row_h = o.rowHeight;
@@ -41,7 +45,7 @@
             }
         }
 
-        for (i=0; i<items.length; i++) {
+        for (var i=0; i<items.length; i++) {
             row.push(items[i]);
             row_width += items[i][2] + o.margin;
             if (row_width >= max_w) {
