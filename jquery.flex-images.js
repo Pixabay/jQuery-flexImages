@@ -48,7 +48,7 @@
                 var margins_in_row = row.length * o.margin;
                 ratio = (max_w-margins_in_row) / (row_width-margins_in_row), row_h = Math.ceil(o.rowHeight*ratio), exact_w = 0, new_w;
                 for (x=0; x<row.length; x++) {
-                    new_w = Math.ceil(row[x][2]*ratio);
+                    new_w = Math.ceil(row[x][2]*ratio)-2;
                     exact_w += new_w + o.margin;
                     if (exact_w > max_w) new_w -= exact_w - max_w + 1;
                     _helper();
