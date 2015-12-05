@@ -1,5 +1,5 @@
 /*
-	jQuery flexImages v1.0.3
+	jQuery flexImages v1.0.4
     Copyright (c) 2014 Simon Steinberger / Pixabay
     GitHub: https://github.com/Pixabay/jQuery-flexImages
 	License: http://www.opensource.org/licenses/mit-license.php
@@ -27,8 +27,8 @@
     }
 
     function makeGrid(grid, items, o, noresize){
-        var x, new_w, ratio = 1, rows = 1, max_w = grid.width(), row = [], row_width = 0, row_h = o.rowHeight;
-        if (!max_w) max_w = grid.width(); // IE < 8 bug
+        var x, new_w, ratio = 1, rows = 1, max_w = grid.width()-2, row = [], row_width = 0, row_h = o.rowHeight;
+        if (!max_w) max_w = grid.width()-2; // IE < 8 bug
 
         // define inside makeGrid to access variables in scope
         function _helper(lastRow){
@@ -50,7 +50,7 @@
                 for (x=0; x<row.length; x++) {
                     new_w = Math.ceil(row[x][2]*ratio);
                     exact_w += new_w + o.margin;
-                    if (exact_w > max_w) new_w -= exact_w - max_w + 1;
+                    if (exact_w > max_w) new_w -= exact_w - max_w;
                     _helper();
                 }
                 // reset for next row
