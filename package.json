@@ -1,0 +1,32 @@
+{
+  "name": "jquery-fleximages",
+  "version": "1.0.5",
+  "description": "A lightweight jQuery plugin for creating fluid galleries as seen on Flickr and Google Images.",
+  "main": "jquery.flex-images.min.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pixabay/jQuery-flexImages.git"
+  },
+  "keywords": [
+    "images",
+    "pictures",
+    "photos",
+    "videos",
+    "responsive",
+    "layout",
+    "gallery",
+    "fluid",
+    "grid",
+    "flexible",
+    "jQuery"
+  ],
+  "author": "Simon Steinberger <simon@pixabay.com> (https://pixabay.com/users/Simon/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pixabay/jQuery-flexImages/issues"
+  },
+  "homepage": "https://github.com/Pixabay/jQuery-flexImages#readme",
+  "dependencies": {
+    "jquery": ">=1.7"
+  }
+}

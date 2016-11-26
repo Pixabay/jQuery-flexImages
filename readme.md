@@ -25,6 +25,18 @@ https://goodies.pixabay.com/jquery/flex-images/demo.html
 * Support for lazy loading of images and iframe contents
 * Layout options to control e.g. the maximum number of rows - or whether or not to display an incomplete (last) row.
 
+## Installation
+
+Download package and include `jquery.flex-images.min.js` in your document after including jQuery.
+
+or install with Bower
+
+`bower install --save jquery-fleximages`
+
+or NPM
+
+`npm install --save jquery-fleximages`
+
 ## Changelog
 
 ### Version 1.0.4 - 2015/12/05
